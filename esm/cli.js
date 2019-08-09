@@ -95,7 +95,7 @@ const cli = () => {
   }
 
   const connectionString = args.env ? process.env[args.env] : args.uri;
-  console.log(args.env);
+
   if (args.help) {
     console.log(usage);
     process.exit(0);
