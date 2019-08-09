@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "@aibex/pgok",
+  "version": "0.0.1",
+  "description": "A simple CLI to block until Postgres is available",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "build": "rm -rf cjs/* && babel esm --out-dir cjs",
+    "watch": "nodemon -L --ignore cjs/ --exec yarn build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "pgok": "./bin/pgok"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.0.2",
+    "pg": "^7.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "nodemon": "^1.19.1"
+  }
+}
