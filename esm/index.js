@@ -39,7 +39,8 @@ const exec = opts => {
   };
 
   log("Connecting to Postgres");
-  info(opts.connectionString);
+  if (!opts.uri) throw new Error("No connection string");
+  info(opts.uri);
   pgwait();
 };
 

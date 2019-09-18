@@ -20,7 +20,7 @@ const optionDefinitions = [
   {
     name: "retries",
     alias: "r",
-    type: Boolean,
+    type: Number,
     description:
       "The number of tries to make before giving up with exit code `1` (defaults to `10`)",
   },
@@ -48,7 +48,7 @@ const optionDefinitions = [
     type: String,
     typeLabel: "{underline string}",
     defaultOption: true,
-    defaultValue: "postgres://postgres:postgres@localhost:5432/public",
+    defaultValue: "",
     description:
       "A fully formed postgres connection string you want to ensure is accessible",
   },
@@ -57,7 +57,8 @@ const optionDefinitions = [
     alias: "e",
     type: String,
     typeLabel: "{underline string}",
-    description: "An optional ENV to reference for the connection uri.",
+    description:
+      "An optional ENV name to reference for the connection uri from.",
   },
 ];
 
@@ -73,7 +74,7 @@ const usageDoc = [
   {
     header: "Specify a URI",
     content: [
-      "pgok can be launched wither with a URI, or by specifying the -e flag. Specifying -e will cause pgok to look for the Postgres Connection String at the URL contained within process.env[ENV_NAME]",
+      "pgok can be launched wither with a URI, or by specifying the -e flag. Specifying -e will cause pgok to look for the Postgres Connection String at the ENV value provided (process.env[ENV_NAME])",
     ],
   },
   {
