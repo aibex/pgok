@@ -29,7 +29,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "command-line-args": "^5.1.1",
-    "command-line-usage": "^6.0.2",
+    "command-line-usage": "^6.1.0",
     "pg": "^7.12.1"
   },
   "devDependencies": {
