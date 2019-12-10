@@ -33,7 +33,7 @@
     "pg": "^7.14.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
+    "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "7.7.6",
     "nodemon": "^2.0.1"
