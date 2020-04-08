@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "@aibex/pgok",
   "version": "0.0.1",
   "description": "A simple CLI to block until Postgres is available",
@@ -20,22 +19,40 @@
   "scripts": {
     "build": "rm -rf cjs/* && babel esm --out-dir cjs",
     "watch": "nodemon -L --ignore cjs/ --exec yarn build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "---": "echo \"--- Utility Scripts ---\"",
+    "commit:cz": "exec < /dev/tty && git-cz --hook || true",
+    "lint-staged": "lint-staged --shell"
   },
   "bin": {
     "pgok": "./bin/pgok"
   },
-  "author": "",
-  "license": "UNLICENSED",
+  "author": "Aibex, Inc",
+  "license": "Apache-2.0",
   "dependencies": {
     "command-line-args": "^5.1.1",
     "command-line-usage": "^6.1.0",
+    "commitlint-config-gitmoji": "^1.0.1",
+    "cz-emoji": "^1.2.1",
     "pg": "^7.18.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "7.8.7",
-    "nodemon": "^2.0.2"
+    "commitizen": "^4.0.4",
+    "conventional-changelog-conventionalcommits": "^4.2.3",
+    "emoji-cz": "^0.3.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged --shell",
+      "post-commit": "git update-index --again",
+      "prepare-commit-msg": "if [ -t 1 ] ; then yarn run commit:cz; fi"
+    }
   }
 }
