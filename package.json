@@ -20,6 +20,7 @@
     "build": "rm -rf cjs/* && babel esm --out-dir cjs",
     "watch": "nodemon -L --ignore cjs/ --exec yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "np",
     "---": "echo \"--- Utility Scripts ---\"",
     "commit:cz": "exec < /dev/tty && git-cz --hook || true",
     "lint-staged": "lint-staged --shell"
@@ -46,6 +47,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2",
     "nodemon": "^2.0.2",
+    "np": "*",
     "prettier": "^2.0.4"
   },
   "husky": {
@@ -54,5 +56,8 @@
       "post-commit": "git update-index --again",
       "prepare-commit-msg": "if [ -t 1 ] ; then yarn run commit:cz; fi"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
