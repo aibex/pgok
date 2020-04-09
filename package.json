@@ -19,7 +19,7 @@
   "scripts": {
     "build": "rm -rf cjs/* && babel esm --out-dir cjs",
     "watch": "nodemon -L --ignore cjs/ --exec yarn build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified... yet\" && exit 0",
     "release": "np",
     "---": "echo \"--- Utility Scripts ---\"",
     "commit:cz": "exec < /dev/tty && git-cz --hook || true",
