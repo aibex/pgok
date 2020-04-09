@@ -59,5 +59,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "bin/*",
+    "cjs/*",
+    "esm/*"
+  ]
 }
