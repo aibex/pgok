@@ -1,5 +1,5 @@
 {
-  "esm/*.js": ["yarn lint --fix", "prettier --write"],
+  "esm/*.js": ["lint --fix", "prettier --write"],
   "*.json": ["prettier --write"],
   "*.md": ["prettier --write"]
 }
