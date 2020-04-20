@@ -4,6 +4,10 @@
   "description": "A simple CLI to block until Postgres is available",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
+  "repository": "https://github.com/aibex/pgok",
+  "homepage": "https://github.com/aibex/pgok",
+  "author": "Aibex, Inc <oss@aibex.com>",
+  "license": "Apache-2.0",
   "babel": {
     "presets": [
       [
@@ -18,7 +22,7 @@
   },
   "scripts": {
     "build": "rm -rf cjs/* && babel esm --out-dir cjs",
-    "watch": "nodemon -L --ignore cjs/ --exec yarn build",
+    "watch": "nodemon -L --ignore cjs/ --exec npm run build",
     "test": "echo \"Error: no test specified... yet\" && exit 0",
     "release": "np",
     "---": "echo \"--- Utility Scripts ---\"",
@@ -28,8 +32,6 @@
   "bin": {
     "pgok": "./bin/pgok"
   },
-  "author": "Aibex, Inc",
-  "license": "Apache-2.0",
   "dependencies": {
     "command-line-args": "^5.1.1",
     "command-line-usage": "^6.1.0",
@@ -52,9 +54,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged --shell",
+      "pre-commit": "npm run lint-staged --shell",
       "post-commit": "git update-index --again",
-      "prepare-commit-msg": "if [ -t 1 ] ; then yarn run commit:cz; fi"
+      "prepare-commit-msg": "if [ -t 1 ] ; then npm run commit:cz; fi"
     }
   },
   "publishConfig": {
